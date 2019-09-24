@@ -1,7 +1,7 @@
 # Constitution Day
 ## New College of Florida - Digital Scholarship Studio
 
-Constitution Day is an online exhibit for New College of Florida students' answers to *"What would you change about the Constitution?"*. It uses the amazing [MonumentLab/Proposals](https://github.com/MonumentLab/proposals) Jekyll theme. This fork does not have the original images resources.
+Constitution Day is an online exhibit for New College of Florida students' answers to *"What would you change about the Constitution?"*. It uses the amazing [MonumentLab/Proposals](https://github.com/MonumentLab/proposals) Jekyll theme. This fork does not have the original image resources.
 
 ## Updating the website
 
