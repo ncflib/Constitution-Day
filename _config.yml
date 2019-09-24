@@ -1,0 +1,112 @@
+# main settings
+title:            "Constitution Day"
+description:      "Constitution Day DSS"
+url:              'https://dss.ncf.edu/constitution'
+baseurl:          '/constitution'
+
+# analytics
+analytics:
+  google:
+    tracking_id          : UA-126727400-1
+
+# build settings
+permalink:        pretty
+exclude:          [Gemfile*,
+                   Rakefile,
+                   node_modules,
+                   vendor,
+                   spec,
+                   README.md,
+                   assets/extra-files,
+                   assets/stamen-tiles,
+                   dev,
+                   iiif,
+                   collections]
+keep_files:       [ assets/constitution]
+
+collections_dir:  collections
+
+# monument lab child theme settings
+ml:
+  endpoint: /assets/constitution/
+  display_fields:
+    pid: "ID"
+    title: "Title"
+    text: "Text"
+    location_transcription: "Location"
+    image_file_name: "Image File Name"
+    proposal_transcription: "Transcription"
+    topic: "Topics"
+    amendment: "Amendment"
+    topic_summary: "Topic Summary"
+    type: "Monument Type"
+    keywords_other: "Other Keywords"
+    credit: "Credit"
+    image_labels: "Image Labels"
+    zipcode: "Contributor&#8217;s Zipcode"
+    gen_neighborhood: "Contributor&#8217;s Neighborhood"
+    outside_phl: "Contributor's Location"
+    age: "Contributor&#8217;s Age"
+    age_range: "Contributor&#8217;s Age Range"
+    instagram: "Contributor&#8217;s Instagram"
+    twitter: "Contributor&#8217;s Twitter"
+    facebook: "Contributor&#8217;s Facebook"
+  item_fields:
+    - text
+
+# wax collection settings
+collections:
+  constitution:
+    output: true
+    source: constitution.csv
+    layout: item-page
+    lunr_index:
+      content: true
+      fields: [pid,link,collection,lunr_id,topic,amendment,text,source]
+    iiif:
+      label: topic
+
+# menu settings
+menu:
+  - label: About &dtrif;
+    sub:
+    - label: About
+      link: /about/
+    - label: Credits
+      link: /credits/
+  - label: Gallery
+    link: /gallery/
+  - label: Search
+    link: /search/
+
+# search tests
+quoll:
+  main:
+    page: '/'
+    terms:
+      - iran
+      - map
+      - manuscript
+
+# javascript dependencies
+js:
+  jquery:
+    version: 3.2.1
+    cdn: //code.jquery.com/jquery-3.2.1.min.js
+  popper:
+    version: 1.12.9
+    cdn: //cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js
+  bootstrap:
+    version: 4.0.0
+    cdn: //maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js
+  leaflet:
+    version: 1.3.1
+    cdn: //unpkg.com/leaflet@1.3.1/dist/leaflet.js
+  leaflet-iiif:
+    version: 2.0.1
+    cdn: //cdn.jsdelivr.net/npm/leaflet-iiif@2.0.1/leaflet-iiif.min.js
+
+# cors headers for iiif use
+webrick:
+  headers:
+    "Access-Control-Allow-Origin": "*"

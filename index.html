@@ -1,0 +1,54 @@
+---
+layout: default
+collection: constitution
+class: home
+---
+
+<div class="textbox">
+
+<h2>Constitution Day - DSS</h2>
+
+<p>constitution constitution constitution constitution constitution constitution constitution constitution constitution constitution constitution constitution constitution constitution constitution constitution constitution constitution constitution </p>
+
+</div>
+
+<div id="wax-gallery"></div>
+
+{%- assign the_collection = site.data[page.collection] -%}
+
+<script type="text/javascript">
+  // create items
+  var container= $('#wax-gallery');
+  container.prepend("<div id='gallery'></div>");
+  var gallery = $('#gallery');
+
+  let i = 0;
+
+var collection = [];
+
+{% for item in the_collection %}collection.push({ pid: "{{ item.pid | downcase }}", source: "{{ item.source }}", title: "{{ item.title }}" });{% endfor %}
+
+var index = Math.floor(Math.random() * collection.length);
+if (index < 1000) { index = [0, 1000]; }
+else if (index > collection.length) { index = [collection.length-1000, collection.length]; }
+else { index = [index - 1000, index]; }
+
+var subset = collection.slice(index[0], index[1]);
+
+for( i in subset ){
+  gallery.append("<div class='gallery-item all'><a href='{{ site.baseurl }}/{{ page.collection }}/" + subset[i]['pid'] + "/'><div class='hovereffect'><img class='img-responsive gallery-thumb' data-src='{{ site.baseurl }}/{{ site.ml.endpoint }}thumbs/" + subset[i]['source'] + "'><div class='overlay'><p class='info'>" + subset[i]['title'] + "</p></div></div></a></div>");
+}
+
+(function(w, d){
+var b = d.getElementsByTagName('body')[0];
+var s = d.createElement("script"); 
+var v = !("IntersectionObserver" in w) ? "8.15.0" : "10.17.0";
+s.async = true; 
+s.src = "https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/" + v + "/lazyload.min.js";
+w.lazyLoadOptions = {
+  elements_selector: '.gallery-thumb'
+};
+b.appendChild(s);
+}(window,document));
+
+</script>

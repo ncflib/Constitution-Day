@@ -1,0 +1,38 @@
+---
+layout: default
+---
+
+<div class="monument-image">
+    <img src="/constitution/{{ site.ml.endpoint }}full/{{ page.source}}" alt="">
+</div>
+
+<center>
+
+
+  <div id="metadata-block">
+
+    <table class="table table-striped">
+
+    {% for field in site.ml.item_fields %}
+    
+    {% if page[field] %}
+    
+        {% if 'topics,keywords_other,type,neighborhood' contains field %}
+        {% assign field_value = page[field] | replace: ',', ', ' %}
+        {% elsif 'outside_phl' contains field %}
+        {% assign field_value = page[field] | replace: 'INTERNATIONAL', '' %}
+        {% else %}
+        {% assign field_value = page[field] %}
+        {% endif %}
+    
+    <tr class="meta">
+        <td class="label">{{ site.ml.display_fields[field] }}: </td>
+        <td class="value">{{ field_value }}</td>
+    </tr>
+    {% endif %}
+    
+    {% endfor %}
+
+    </table>
+  </div>
+</center>
