@@ -3,8 +3,9 @@ pid: ch9
 link: "{{'/constitution/c9/' | relative_url }}"
 collection: constitution
 lunr_id: '9'
-artist: 
-title: 
+topic: LGBTQ+
+amendment: 
+article: 
 text: October 8th 2019. Title VII SHOULD project LQBTQ+ people on the basis of sexual
   orientation & gender identity.
 source: 9.png

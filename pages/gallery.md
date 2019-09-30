@@ -7,4 +7,5 @@ collection: constitution
 facet_by:
     - topic
     - amendment
+    - article
 ---

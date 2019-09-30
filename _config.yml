@@ -1,6 +1,6 @@
 # main settings
 title:            "Constitution Day"
-description:      "Constitution Day DSS"
+description:      "Constitution Day - DSS"
 url:              'https://dss.ncf.edu/constitution'
 baseurl:          '/constitution'
 
@@ -38,6 +38,7 @@ ml:
     proposal_transcription: "Transcription"
     topic: "Topics"
     amendment: "Amendment"
+    article: "Article"
     topic_summary: "Topic Summary"
     type: "Monument Type"
     keywords_other: "Other Keywords"
@@ -53,6 +54,9 @@ ml:
     facebook: "Contributor&#8217;s Facebook"
   item_fields:
     - text
+    - topic
+    - amendment
+    - article
 
 # wax collection settings
 collections:
@@ -62,7 +66,7 @@ collections:
     layout: item-page
     lunr_index:
       content: true
-      fields: [pid,link,collection,lunr_id,topic,amendment,text,source]
+      fields: [pid,link,collection,lunr_id,topic,amendment,article,text,source]
     iiif:
       label: topic
 

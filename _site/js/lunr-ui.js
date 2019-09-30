@@ -1,51 +1,42 @@
-// ---
-// layout: none
-// ---
-// $.getJSON("{{ site.baseurl }}/js/lunr-index.json", function(index_json) {
-$.getJSON("../js/lunr-index.json", function(index_json) {
+$.getJSON("/constitution/js/lunr-index.json", function(index_json) {
 window.index = new elasticlunr.Index;
 window.store = index_json;
 index.saveDocument(false);
 index.setRef('lunr_id');
 index.addField('pid');
-index.addField('title');
+index.addField('link');
+index.addField('collection');
+index.addField('lunr_id');
+index.addField('topic');
+index.addField('amendment');
+index.addField('article');
 index.addField('text');
+index.addField('source');
+index.addField('content');
 // add docs
-for (let i in store){index.addDoc(store[i]);}
+for (i in store){index.addDoc(store[i]);}
 $('input#search').on('keyup', function() {
 var results_div = $('#results');
 var query = $(this).val();
 var results = index.search(query, { boolean: 'AND', expand: true });
 results_div.empty();
-
-var results_string = '<p><small>Showing ';
-results_string += results.length > 500 ? '500  of ' + results.length : results.length; 
-results_string += " results.</small></p>";
- 
-results_div.prepend(results_string);
-
-var resultsArray = []
-
-for (let r in results.slice(0, 500)) {
-let ref = results[r].ref;
-let item = store[ref];
-resultsArray.push(item);
+if (results.length > 10) {
+results_div.prepend("<p><small>Displaying 10 of " + results.length + " results.</small></p>");
 }
-
-for (let r in resultsArray.sort(nameSort)){
-
-let item = resultsArray[r];
-var meta = '';
-
-var result = '<div class="result"><a href="/constitution/constitution/' + item.pid.toLowerCase() + '"><img class="sq-thumb-sm" src="/constitution/assets/constitution/thumbs/' + item.source.toUpperCase().replace('JPG','jpg').replace('PNG','png') + '"/>&nbsp;&nbsp;&nbsp;<p><span class="title">' + item.text + '.</span><br></p></a></div>';
+for (var r in results.slice(0, 9)) {
+var ref = results[r].ref;
+var item = store[ref];var pid = item.pid;
+var link = item.link;
+var collection = item.collection;
+var lunr_id = item.lunr_id;
+var topic = item.topic;
+var amendment = item.amendment;
+var article = item.article;
+var text = item.text;
+var source = item.source;
+var content = item.content;
+var result = '<div class="result"><b><a href="' + item.link + '">' + title + '</a></b></p></div>';
 results_div.append(result);
 }
-
 });
 });
-
-function nameSort(a,b) {
-    let title_a = a.title.replace(/[\[\].,\/#!$%\^&\*;:{}=\-_`~()]/g,"").toLowerCase();
-    let title_b = b.title.replace(/[\[\].,\/#!$%\^&\*;:{}=\-_`~()]/g,"").toLowerCase();
-    return title_a > title_b ? 1 : -1;
-}

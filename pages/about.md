@@ -14,12 +14,13 @@ banner:
     zoom: 1
 ---
 
-## PROPOSALS: CREATIVE SPECULATIONS FOR PHILADELPHIA
+## Constitution Day
 
-In 2017, Monument Lab invited 20 artists to create temporary prototype monuments around the city. In the research program of Monument Lab, we invited Philadelphians and visitors to reflect on these prototypes, and on the city itself, and to offer their own proposals for Philadelphia monuments. Each proposal is an idea to be considered, an inspiration to be admired, and an additional perspective on our history and our future. They were collected at learning labs in public squares and city parks, adjacent to the prototype monuments.
+For Constitution Day 2019, the Jane Bancroft Cook Library invited the community of New College of Florida, including students, staff, and faculty to contribute to a library display by answering the following question, writing it on a postcard, and pinning it to a public board: **What would you change about the Constitution?**
 
-The labs were housed in converted shipping containers and staffed by youth researchers, artists, and community members. There, we engaged visitors in conversations about monuments, both real and imagined. Their proposals were transferred to a display at the exhibition hub at PAFA and an online map available the Monument Lab website. Later they were transcribed and analyzed. They will be uploaded as an open dataset, deposited into a local library, and channeled into a final report to the city.
+Contributions were accepted physically and were pinned to a public display in the lobby of the Library. They were also accepted electronically. Physical contributions were digitized and made available on this website.
 
-The public proposals collected at the labs represent an astonishing range and depth of perspectives about our city. Taken as a collection of individual public proposals, they remind us of the powerfully diverse city in which we live, where many histories coexist, only a few of which are called out as statues, plaques, and markers.
 
-Our monuments have meaning. They are a city’s way of telling its story, of picking out moments in history for elevation, and for making a statement about who and what deserves to be honored and remembered. In 2017, we recognized that the story told by our monuments is not our city’s full history. Help us elevate a richer reading of our history and move creatively toward a better future.
+These contributions illustrate a range of perspectives, but also represent strikingly similar views. Taken as a collection of individual thoughts about the defining document of the United States, this (growing) reminds us that there is an opportunity for serious discussion about the Constitution of the United States.
+
+This project was inspired by the good folks at [Monument Lab](https://monumentlab.com).
