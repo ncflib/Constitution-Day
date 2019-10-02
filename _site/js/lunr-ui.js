@@ -25,17 +25,8 @@ results_div.prepend("<p><small>Displaying 10 of " + results.length + " results.<
 }
 for (var r in results.slice(0, 9)) {
 var ref = results[r].ref;
-var item = store[ref];var pid = item.pid;
-var link = item.link;
-var collection = item.collection;
-var lunr_id = item.lunr_id;
-var topic = item.topic;
-var amendment = item.amendment;
-var article = item.article;
-var text = item.text;
-var source = item.source;
-var content = item.content;
-var result = '<div class="result"><b><a href="' + item.link + '">' + title + '</a></b></p></div>';
+var item = store[ref];
+var result = '<div class="result"><b><a href="/constitution/constitution/' + item.pid + '">' + item.text.substring(0,50) + '...</a></b></p></div>';
 results_div.append(result);
 }
 });
