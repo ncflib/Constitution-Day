@@ -29,7 +29,7 @@ results_div.prepend("<p><small>Displaying 10 of " + results.length + " results.<
 for (var r in results.slice(0, 9)) {
 var ref = results[r].ref;
 var item = store[ref];
-var result = '<div class="result"><b><a href="/constitution/constitution/' + item.pid + '">' + item.text.substring(0,50) + '...</a></b></p></div>';
+var result = '<div class="result"><b><a href="/constitution/constitution/' + item.pid + '"><img class="sq-thumb-sm" src="/constitution/assets/constitution/thumbs/' + item.source.toUpperCase().replace('JPG','jpg').replace('PNG','png') + '"/>&nbsp;&nbsp;&nbsp;' + item.text.substring(0,50) + '...</a></b></p></div>';
 results_div.append(result);
 }
 });
